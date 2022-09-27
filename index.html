@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" >
+    <title> Analog Clock </title>
+</head>
+<body>
+        <div class="clock">
+            <div class="numbers"> <span>1</span></div>
+            <div class="numbers"> <span>2</span></div>
+            <div class="numbers"> <span>3</span></div>
+            <div class="numbers"> <span>4</span></div>
+            <div class="numbers"> <span>5</span></div>
+            <div class="numbers"> <span>6</span></div>
+            <div class="numbers"> <span>7</span></div>
+            <div class="numbers"> <span>8</span></div>
+            <div class="numbers"> <span>9</span></div>
+            <div class="numbers"> <span>10</span></div>
+            <div class="numbers"> <span>11</span></div>
+            <div class="numbers"> <span>12</span></div>
+
+            <div class="hand hour"    id="hr" ></div>
+            <div class="hand minute"  id="mn" ></div>
+            <div class="hand second"  id="sc" ></div>
+
+            <div class="name">By:Eng. Ahmed Elnemr </div>
+
+            
+        </div>
+    </div>
+
+    <script>
+        var hr = document.getElementById('hr');
+        var mn = document.getElementById('mn');
+        var sc = document.getElementById('sc');
+
+        function myClock(){
+            var myDate = new Date();
+            var hh = myDate.getHours() * 30;
+            var mm = myDate.getMinutes() * 6;
+            var ss = myDate.getSeconds() * 6;
+        
+
+            hr.style.transform = 'rotateZ(' + ((hh)+(mm/12)) + 'deg)';
+            mn.style.transform = 'rotateZ(' + mm + 'deg)';
+            sc.style.transform = 'rotateZ(' + ss + 'deg)';
+        }
+
+        setInterval(myClock,1000);
+    </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
